@@ -1,21 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Quotes.MoexProvider.MoexClient.Abstractions;
-using Quotes.MoexProvider.MoexClient.Models;
+using Quotes.Domain.Quotes.Abstractions;
+using Quotes.MoexProvider.Moex.Http.Abstractions;
+using Quotes.MoexProvider.Moex.Http.Models;
 
 namespace Quotes.Web.Controllers;
 
 [ApiController]
 [Route("/api/test")]
-public class TestController(IMoexRequester client): ControllerBase
+public class TestController(IQuoteService quotes): ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> GetTests(CancellationToken token)
     {
-        var data = await client.DoRequest<dynamic>(
-            new MoexRequest("history/engines/stock/markets/shares/boards/TQBR/securities/SBER.json?date=2025-05-08"), 
-            token
-        );
-        
-        return Ok(data);
+        var found = await quotes.GetQuote("SBER", new DateTime(2025, 05, 08), token);
+
+        return found is null ? Ok("не найдено") : Ok(found);
     }
 }
