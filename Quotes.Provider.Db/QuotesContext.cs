@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Quotes.Db;
+namespace Quotes.Provider.Db;
 
 public class QuotesContext(DbContextOptions<QuotesContext> options): DbContext(options)
 {

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Quotes.Db;
+namespace Quotes.Provider.Db;
 
 public static class ServiceRegistration
 {

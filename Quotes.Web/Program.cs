@@ -1,5 +1,6 @@
-using Quotes.Db;
 using Quotes.Domain;
+using Quotes.MoexProvider;
+using Quotes.Provider.Db;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,8 @@ var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
 services
     .AddDatabase(configuration)
-    .AddDomain(assemblies);
+    .AddDomain(assemblies)
+    .AddMoexProvider(configuration);
 
 services
     .AddControllers();

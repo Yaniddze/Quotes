@@ -14,8 +14,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Quotes.Db\Quotes.Db.csproj" />
+      <ProjectReference Include="..\Quotes.Provider.Db\Quotes.Provider.Db.csproj" />
       <ProjectReference Include="..\Quotes.Domain\Quotes.Domain.csproj" />
+      <ProjectReference Include="..\Quotes.MoexProvider\Quotes.MoexProvider.csproj" />
     </ItemGroup>
 
 </Project>

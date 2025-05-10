@@ -14,7 +14,14 @@ public static class InjectableExtension
 
         foreach (var type in types)
         {
-            services.AddScoped(typeof(IInjectable), type);
+            var interfaces = type.GetInterfaces();
+            
+            foreach (var interfaceType in interfaces)
+            {
+                services.AddScoped(interfaceType, type);
+            }
+
+            services.AddScoped(type);
         }
 
         return services;
