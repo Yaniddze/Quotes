@@ -1,11 +1,11 @@
 ﻿namespace Quotes.MoexProvider.Quotes.Models;
 
-public class QuotesMoexRequest
+public class QuotesMoexResponse
 {
-    public QuotesMoexRequestHistory History { get; set; }
+    public QuotesMoexResponseHistory History { get; set; }
 }
 
-public class QuotesMoexRequestHistory
+public class QuotesMoexResponseHistory
 {
     public IEnumerable<string> Columns { get; set; }
     public IEnumerable<IEnumerable<object>> Data { get; set; }

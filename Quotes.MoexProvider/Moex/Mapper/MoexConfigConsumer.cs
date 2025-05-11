@@ -1,5 +1,4 @@
-﻿using Quotes.Domain.Quotes.Models;
-using Quotes.MoexProvider.Moex.Mapper.Abstractions;
+﻿using Quotes.MoexProvider.Moex.Mapper.Abstractions;
 using Quotes.MoexProvider.Moex.Mapper.Models;
 
 namespace Quotes.MoexProvider.Moex.Mapper;

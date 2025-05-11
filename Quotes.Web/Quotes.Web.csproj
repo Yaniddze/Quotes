@@ -17,6 +17,11 @@
       <ProjectReference Include="..\Quotes.Provider.Db\Quotes.Provider.Db.csproj" />
       <ProjectReference Include="..\Quotes.Domain\Quotes.Domain.csproj" />
       <ProjectReference Include="..\Quotes.MoexProvider\Quotes.MoexProvider.csproj" />
+      <ProjectReference Include="..\Quotes.Services\Quotes.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
     </ItemGroup>
 
 </Project>

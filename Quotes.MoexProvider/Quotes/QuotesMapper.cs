@@ -1,7 +1,6 @@
-﻿using Quotes.Domain.Injectable;
-using Quotes.Domain.Quotes.Models;
-using Quotes.MoexProvider.Moex.Mapper;
+﻿using Quotes.MoexProvider.Moex.Mapper;
 using Quotes.MoexProvider.Moex.Mapper.Abstractions;
+using Quotes.Services.Quotes.Models;
 
 namespace Quotes.MoexProvider.Quotes;
 
@@ -12,6 +11,7 @@ public class QuotesMapper: IMoexMapperConfig<Quote>
         builder
             .HasField(x => x.Ticker, "SECID")
             .HasField(x => x.ClosePrice, "CLOSE")
+            .HasField(x => x.ShortName, "SHORTNAME")
             .HasField(x => x.Date, "TRADEDATE");
     }
 }
